@@ -1,0 +1,21 @@
+12:56:44 **** Incremental Build of configuration Debug for project prueba ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F411xE -DDEBUG -c -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:99:21: warning: unused variable 'status' [-Wunused-variable]
+   HAL_StatusTypeDef status = HAL_I2C_Mem_Read(&hi2c1, 0x32, 0x0F, 1, &value, 1, 10000);
+                     ^~~~~~
+arm-none-eabi-gcc -o "prueba.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\CursoDSP19\STMCube_Workspace\prueba\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="prueba.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: prueba.elf
+ 
+arm-none-eabi-objdump -h -S  prueba.elf  > "prueba.list"
+arm-none-eabi-size   prueba.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21424	     20	  37892	  59336	   e7c8	prueba.elf
+Finished building: default.size.stdout
+ 
+Finished building: prueba.list
+ 
+
+12:56:47 Build Finished. 0 errors, 1 warnings. (took 2s.31ms)
+

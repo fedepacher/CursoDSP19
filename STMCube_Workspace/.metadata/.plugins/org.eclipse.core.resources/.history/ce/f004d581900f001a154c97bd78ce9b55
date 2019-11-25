@@ -1,0 +1,24 @@
+/*
+ * accelerometer_mio.h
+ *
+ *  Created on: 25 nov. 2019
+ *      Author: fede_
+ */
+
+#ifndef INC_ACCELEROMETER_MIO_H_
+#define INC_ACCELEROMETER_MIO_H_
+
+#ifdef __cplusplus
+ extern "C" {
+#endif
+
+
+/* Include Accelerometer component driver */
+#include "../Components/lsm303dlhc/lsm303dlhc.h"
+
+uint8_t Accelerometer_Init(void);
+void BSP_ACCELERO_Reset(void);
+void BSP_ACCELERO_Click_ITConfig(void);
+void BSP_ACCELERO_GetXYZ(int16_t *pDataXYZ);
+
+#endif /* INC_ACCELEROMETER_MIO_H_ */

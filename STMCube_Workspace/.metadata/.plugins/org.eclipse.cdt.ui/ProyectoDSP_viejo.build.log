@@ -1,0 +1,7 @@
+09:26:43 **** Clean-only build of configuration Debug for project ProyectoDSP_viejo ****
+make -j4 clean 
+rm -rf *
+ 
+
+09:26:43 Build Finished. 0 errors, 0 warnings. (took 531ms)
+
